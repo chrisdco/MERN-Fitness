@@ -3,16 +3,25 @@
 
 /* layout */
 :root {
-  --primary: #1aac83;
+  --primary: #05161a;
+  --secondary: #072e33;
+  --tertiary: #0c7075;
+
+  --quat: #0f969c;
+  --quin: #6da5c0;
+  --seiz: #294d61;
   --error: #e7195a;
 }
 body {
-  background: #f1f1f1;
+  background: linear-gradient(40deg, var(--quin), var(--quat), var(--secondary));
   margin: 0;
   font-family: "Poppins";
+  height: 100vh;
+  background-size: cover;
 }
+
 header {
-  background: #fff;
+  background: linear-gradient(220deg, var(--seiz), var(--primary));
 }
 header .container {
   max-width: 1400px;
@@ -23,7 +32,7 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
+  color: var(--quin);
   text-decoration: none;
 }
 .pages{
@@ -39,7 +48,7 @@ header a {
   gap: 100px;
 }
 .workout-details {
-  background: #fff;
+  background: var(--tertiary);
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
@@ -54,17 +63,17 @@ header a {
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
-  color: #555;
+  color: var(--quin);
 }
 .workout-details span {
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: var(--quin);
   padding: 6px;
   border-radius: 50%;
-  color: #333;
+  color: var(--primary);
 }
 
 /* new workout form */
@@ -76,14 +85,14 @@ input {
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--quin);
   border-radius: 4px;
   box-sizing: border-box;
 }
 form button {
   background: var(--primary);
   border: 0;
-  color: #fff;
+  color: var(--quin);
   padding: 10px;
   font-family: "Poppins";
   border-radius: 4px;
@@ -110,7 +119,7 @@ nav a, nav button {
   margin-left: 10px;
 }
 nav button {
-  background: #fff;
+  background: var(--quin);
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 6px 10px;
@@ -121,14 +130,15 @@ nav button {
 }
 
 /* auth forms */
-/* form.signup, form.login {
+/* Styles for form.signup, form.login, and form.create */
+form.signup, form.login {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  background: #fff;
+  background: linear-gradient(40deg, var(--seiz), var(--tertiary));
   border-radius: 4px;
-} */
-/* Styles for form.signup, form.login, and form.create */
+}
+
 form.signup h3,
 form.login h3,
 form.create h3 {
@@ -138,19 +148,19 @@ form.create h3 {
 form.signup label,
 form.login label,
 form.create label {
-  color: #969696; /* Set the color for labels */
+  color: var(--primary); /* Set the color for labels */
 }
 
 form.signup input,
 form.login input,
 form.create input {
-  color: #ddd; /* Set the color for input text */
-  border: 2px solid #ddd; /* Set the border color for input */
+  color: var(--quin); /* Set the color for input text */
+  border: 2px solid var(--secondary); /* Set the border color for input */
   padding: 5px; /* Adjust padding as needed */
-  background-color: #3b3b3b;
+  background-color: var(--seiz);
 }
 form.signup input.error,
 form.login input.error,
 form.create input.error {
-  border: 1px solid var(--error);
+  border: 2px solid var(--error);
 }
