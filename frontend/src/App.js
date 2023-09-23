@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
 
+
 function App() {
   const { user } = useAuthContext()
 
@@ -30,6 +31,7 @@ function App() {
             />
           </Routes>
         </div>
+        
       </BrowserRouter>
     </div>
   );

@@ -1,0 +1,49 @@
+/* Used for hover effect on workout card display */
+:root {
+    --primary-color: rgb(66, 32, 255);
+  }
+
+  .workout-card {
+    position: relative;
+  }
+  
+  .workout-card:after {  
+    content: "";
+    height: 70px;
+    width: 1px;  
+    position: absolute;  
+    left: -1px;
+    top: 65%;
+    transition: top, opacity;
+    transition-duration: 600ms;
+    transition-timing-function: ease;
+    background: linear-gradient(
+      transparent,
+      var(--primary-color),
+      transparent
+    );
+    opacity: 0;
+  }
+  
+  .workout-card:after {  
+    top: 65%;
+    opacity: 0;
+  }
+  
+  .workout-card:hover:after {
+    top: 25%;
+    opacity: 1;
+  }
+  @media(max-width: 700px) {
+    .workout-card {
+      width: calc(100% - 2rem);
+      margin: 0rem 1rem;
+      padding: 0.75rem;
+      border-radius: 1rem;
+    }
+  }
+  @media(max-width: 600px) {
+    .workout-details {
+      padding: 3rem;
+    }
+}

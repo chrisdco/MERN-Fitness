@@ -13,7 +13,7 @@
   --error: #e7195a;
 }
 body {
-  background: linear-gradient(40deg, var(--quin), var(--quat), var(--secondary));
+  background: linear-gradient(60deg, var(--primary), var(--quat), var(--secondary));
   margin: 0;
   font-family: "Poppins";
   height: 100vh;
@@ -48,17 +48,22 @@ header a {
   gap: 100px;
 }
 .workout-details {
-  background: var(--tertiary);
-  border-radius: 4px;
+  background: rgb(20, 19, 19);
+  border-radius: 1.5rem;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px, 
+    transparent 1px
+  );
+
+  background-size: 1.1rem 1.1rem;
 }
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
-  color: var(--primary);
+  color: var(--tertiary);
 }
 .workout-details p {
   margin: 0;
