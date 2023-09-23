@@ -29,14 +29,15 @@ const Home = () => {
 
   return (
     <div className="home">
+      <div className="workoutform">
+        <WorkoutForm />
+      </div>
       <div className="workouts">
         {workouts && workouts.map((workout) => (
           <WorkoutDetails key={workout._id} workout={workout} />
         ))}
       </div>
-      <div>
-        <WorkoutForm />
-      </div>
+      
     </div>
   )
 }

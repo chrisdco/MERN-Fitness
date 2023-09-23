@@ -1,0 +1,17 @@
+/* MyFooterStyles.css */
+
+/* Style for the Box component */
+.footer-box {
+    background-color: rgba(22,22,34,255);
+    margin-top: 30px;
+  }
+  
+  /* Style for the Typography component */
+  .footer-text {
+    font-size: 20px;
+    color: rgb(31, 169, 194);
+    text-align: center;
+    margin-top: 41px;
+    padding-bottom: 40px;
+  }
+  

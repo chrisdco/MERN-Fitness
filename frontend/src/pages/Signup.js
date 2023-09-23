@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { useSignup } from "../hooks/useSignup"
+import { Link } from "react-router-dom";
+import { useNavbarVisibility } from "../hooks/useNavbarvisibility";
 
 const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {signup, error, isLoading} = useSignup()
+  const { isLoginPage } = useNavbarVisibility();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -31,6 +34,11 @@ const Signup = () => {
 
       <button disabled={isLoading}>Sign up</button>
       {error && <div className="error">{error}</div>}
+      {!isLoginPage && (
+        <p>
+          Already have an account? <Link to="/Login">Login</Link>
+        </p>
+      )}
     </form>
   )
 }
