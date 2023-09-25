@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useSignup } from "../hooks/useSignup"
 import { Link } from "react-router-dom";
 import { useNavbarVisibility } from "../hooks/useNavbarvisibility";
+import '../index.css';
 
 const Signup = () => {
   const [email, setEmail] = useState('')

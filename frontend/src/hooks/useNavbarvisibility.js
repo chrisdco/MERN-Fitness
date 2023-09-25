@@ -5,13 +5,15 @@ export const useNavbarVisibility = () => {
 
   const isLoginPage = location.pathname === "/Login";
   const isSignupPage = location.pathname === "/Signup";
+  const isHomepage = location.pathname === '/';
+  const isWorkoutPage = location.pathname === '/Workout';
 
   // Determine the initial visibility based on the initial path
   const initialVisibility = isSignupPage ? "login" : "signup";
 
   return {
     isLoginPage,
-    isSignupPage,
+    isSignupPage,isHomepage,isWorkoutPage,
     initialVisibility,
   };
 };

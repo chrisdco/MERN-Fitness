@@ -1,6 +1,6 @@
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-
+import '../css/hoverclassy.css'
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 

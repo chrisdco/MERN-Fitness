@@ -1,12 +1,13 @@
 import { useEffect }from 'react'
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
+import '../index.css';
 
 // components
 import WorkoutDetails from '../components/WorkoutDetails'
 import WorkoutForm from '../components/WorkoutForm'
 
-const Home = () => {
+const Workout = () => {
   const {workouts, dispatch} = useWorkoutsContext()
   const {user} = useAuthContext()
 
@@ -42,4 +43,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Workout

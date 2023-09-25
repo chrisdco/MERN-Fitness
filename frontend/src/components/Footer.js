@@ -1,6 +1,8 @@
 import React from 'react';
 import {Stack} from '@mui/material';
 import Logo from '../assets/images/Logo(2).png';
+import '../css/myFooterStyles.css'
+import '../index.css';
 
 const Footer = () => (
   <div className="footer-box">

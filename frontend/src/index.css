@@ -91,7 +91,7 @@ header .container a {
   background-position: 0% 0%;
   border-radius: 1.5rem;
   margin: 20px auto;
-  height: 130px;
+  height: 150px;
   padding: 20px;
   position: relative;
   background-image: radial-gradient(
@@ -223,6 +223,11 @@ nav button:hover{
   background: var(--primary);
   color: var(--quin);
   border: 2px solid var(--quin);
+}
+.grid-container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  gap: 5px; /* Space between items */
 }
 
 /* auth forms */
