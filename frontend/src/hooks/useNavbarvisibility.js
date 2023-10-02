@@ -8,6 +8,7 @@ export const useNavbarVisibility = () => {
 
   // Determine the initial visibility based on the initial path
   const initialVisibility = isSignupPage ? "login" : "signup";
+  const isHomeVisible = isLoginPage || isSignupPage;
 
   return {
     isLoginPage,
