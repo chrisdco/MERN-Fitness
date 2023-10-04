@@ -5,10 +5,10 @@
   padding: 0;
   overflow-x: hidden;
 }
-.container {
+.my-container {
   display: flex;
 }
-.card {
+.my-card {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -20,11 +20,11 @@
     
   }
   
-  .card:hover {
+  .my-card:hover {
     transform: scale(1.05);
   }
   
-  .card .image-container {
+  .my-card .image-container {
     position: relative;
     width: 100%; /* Adjust the width as needed */
     border-radius: 10px;
@@ -32,13 +32,13 @@
     margin: 0; /* Remove margin */
     padding: 0;
   }
-  .card .image-container img {
+  .my-card .image-container img {
     width: 100%;
     object-fit:cover;
     margin: 0;
     
   }
-  .card .image-container .overlay {
+  .my-card .image-container .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,30 +54,30 @@
     transition: opacity 0.3s, transform 0.3s;
     transform: translateY(100%);
   }
-  .card:hover .image-container .overlay {
+  .my-card:hover .image-container .overlay {
     opacity: 1;
     transform: translateY(0);
   }
   
-  .card .image-container .overlay h3,
-  .card .image-container .overlay p {
+  .my-card .image-container .overlay h3,
+  .my-card .image-container .overlay p {
     margin: 0;
   }
   
-  .card .image-container .overlay h3 {
+  .my-card .image-container .overlay h3 {
     font-size: 40px;
     font-weight: bold;
     color: rgb(3, 46, 82);
     font-family: 'Poppins', sans-serif;
   }
   
-  .card .image-container .overlay p {
+  .my-card .image-container .overlay p {
     font-size: 35px;
     color: #7a16b0;
     font-family: 'Poppins', sans-serif;
   }
   
-  .card .card-content {
+  .my-card .my-card-content {
     display: flex;
     align-items: center;
   }

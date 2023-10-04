@@ -17,7 +17,7 @@
   background: #0f222f;
 } */
 
-.my-container {
+.my-container2 {
   position: relative;
   display: flex;
   justify-content: center;
@@ -26,7 +26,8 @@
   margin-bottom: 20%;
 }
 
-.my-container .my-glass {
+.my-container2 .my-glass {
+  opacity: 0.5;
   position: relative;
   width: 30%;
   height: 150px;
@@ -43,25 +44,39 @@
   flex-shrink: 0;
 }
 
-.my-container:hover .my-glass {
+.my-container2:hover .my-glass {
+  opacity: 1;
   transform: rotate(0deg);
   margin: 0 20px;
 }
 
-.my-container .my-glass::before {
+.my-container2 .my-glass::before {
+  
   content: attr(data-text);
   position: absolute;
   bottom: 0;
-  width: 80%;
+  width: 100%;
   height: 50px;
-  background: rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: var(--quin);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.my-container .my-glass i {
-  font-size: 30cm;
-  color: #ffffff;
+.my-container2 .my-glass span {
+  font-size: 5em;
+  color: var(--primary);
+}
+@media (max-width: 768px) {
+  .my-container2{
+    width: 110%;
+    gap: 0px;
+  }
+  .my-container2 .my-glass span{
+    font-size: 4em;
+  }
+  .my-container2 .my-glass::before{
+    font-size: 12px;
+  }
 }

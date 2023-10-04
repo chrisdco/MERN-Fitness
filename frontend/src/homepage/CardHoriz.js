@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const CardHoriz = () => {
   return (
     <section className="my-workout-routines" style={{ marginTop: '30px' }}>
-      <h2 className="carousel-heading">Motivation</h2>
+      <h2 className="carousel-heading">Types</h2>
       <div className="container mb-3">
         <div className="row">
           <div className="col-md-3">

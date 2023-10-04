@@ -17,7 +17,7 @@ const Login = () => {
 
   return (
     <div class="glass-card">
-      <form className="login my-login-form" onSubmit={handleSubmit}>
+      <form className="login" onSubmit={handleSubmit}>
         <h3>Login</h3>
         
         <label>Email address:</label>

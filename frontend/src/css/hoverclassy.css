@@ -10,7 +10,7 @@
   .workout-card:after {  
     content: "";
     height: 70px;
-    width: 1px;  
+    width: 0.11rem;  
     position: absolute;  
     left: -1px;
     top: 65%;
@@ -51,4 +51,11 @@
     .workout-details {
       padding: 3rem;
     }
+}
+@media(max-width: 700px) {
+.workout-card:after {   
+  width: 0.15rem;
+  left: 11px;
+
+}
 }

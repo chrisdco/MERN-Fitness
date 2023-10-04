@@ -41,9 +41,8 @@ function App() {
             />
           </Routes>
           </div>
-        <footer>
-          <Footer/>
-        </footer>
+        <Footer/>
+        
         
       </BrowserRouter>
       </div>

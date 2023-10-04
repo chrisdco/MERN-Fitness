@@ -27,17 +27,17 @@ const Navbar = () => {
       <div className="my-container">
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
           <img src={Logo} alt="logo" style={{ width: '70px', height: '60px' }} />
-          <h1>Workout Buddy</h1>
+          <h1 style={{fontWeight:"bold"}}>Commando</h1>
         </Link>
         <div className='nav'>
           <nav>
             {user ? (
-              <div>
+              <div className='user-details'>
                 <span>{user.email}</span>
                 <button onClick={handleClick}>Log out</button>
               </div>
             ):(
-              <div>
+              <div className='nav-links-container'>
                 {(isLoginPage || isSignupPage) && (
                   <div className='nav-link'>
                   <Link to="/">Home</Link>

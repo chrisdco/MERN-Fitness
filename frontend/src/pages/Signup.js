@@ -8,7 +8,7 @@ const Signup = () => {
   const [password, setPassword] = useState('')
   const {signup, error, isLoading} = useSignup()
   const { isLoginPage } = useNavbarVisibility();
-
+  // Function for submit button for form
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -16,6 +16,7 @@ const Signup = () => {
   }
 
   return (
+    // Form for Signup
     <form className="signup" onSubmit={handleSubmit}>
       <h3>Sign Up</h3>
       

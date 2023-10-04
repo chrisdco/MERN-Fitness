@@ -14,22 +14,31 @@
 }
 body {
   background: linear-gradient(60deg, var(--primary), var(--quat), var(--secondary));
+  /* background-image: url(https://plus.unsplash.com/premium_photo-1673795754005-214e3e1fccba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGF0dGVybnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60); */
   margin: 0;
   font-family: "Poppins";
+  width:100%;
   height: 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden;
+}
+header, footer {
+  box-sizing: border-box;
+  width: 100vw;
 }
 .App{
   font-family: "Poppins";
+  max-width: 100%;
+  margin: o auto;
 }
 
 header {
-  width: 100%;
+  width: 100vw;
   background: linear-gradient(220deg, var(--seiz), var(--primary));
 }
 header .my-container {
-  max-width: 1400px;
+  width: 100vw;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
@@ -43,8 +52,13 @@ header .my-container a {
 }
 
 /* nav */
+.nav-links-container {
+  display: flex; /* Display navigation links horizontally */
+  align-items: center; /* Vertically center align the links */
+}
 .nav-link {
   padding-left: 20px;
+
 }
 .nav nav a {
   position: relative; /* Position for pseudo-element */
@@ -76,9 +90,14 @@ header .my-container a {
 }
 
 .pages{
-  max-width: 1400px;
-  padding: 20px;
+  max-width: 100%;
+
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+.pages{
+  
+}
 }
 
 /* homepage */
@@ -93,7 +112,7 @@ header .my-container a {
 }
 @media (max-width: 768px) {
   .workout-card {
-    width: 10%;
+    width: 50%;
   }
 }
 .workout-details {
@@ -101,7 +120,8 @@ header .my-container a {
   background-position: 0% 0%;
   border-radius: 1.5rem;
   margin: 20px auto;
-  height: 150px;
+  height: 50%;
+  width: 100%;
   padding: 20px;
   position: relative;
   background-image: radial-gradient(
@@ -241,23 +261,49 @@ nav button:hover{
 
 /* auth forms */
 /* Styles for form.signup, form.login, and form.create */
-form.signup, form.my-login-form {
+form.signup, form.login {
   position: relative;
-  backdrop-filter: blur (15px);
-  border-top: 1px solid rgba(255, 255, 255, 0.3); 
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  max-width: 400px;
+  backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5); 
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  max-width: 30%;
   margin: 40px auto;
   padding: 20px;
-  background:  rgba(255, 255, 255, 0.1);
+  background:  rgba(255, 255, 255, 0.25);
   overflow: hidden;
   border-radius: 4px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease; 
 }
-form.signup:hover, form.my-login-form:hover{
+@media (max-width: 768px) {
+form.signup, form.login {
+  max-width:70%;
+}
+}
+@media (max-width: 768px) {
+.user-details{
+  width: 80%;
+}
+.user-details span{
+  font-size: 65%;
+  font-weight: bold;
+}
+.user-details button{
+  width: 60%;
+  height: 30px;
+  font-size: 70%;
+  font-weight: bold;
+}
+}
+
+form.signup:hover, form.login:hover{
   background:  rgba(255, 255, 255, 0.05);
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 768px) {
+.glass-card{
+
+}
 }
 /* .glass-card{
   position: relative;
@@ -290,8 +336,17 @@ form.create {
     /* Add other styles for small screens */
   }
 }
+.my-addbtn{
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .my-addbtn{
+    /* Add css after*/
+    padding-left: 2px;
+  }
+}
 form.signup h3,
-form.my-login-form h3,
+form.login h3,
 form.create h3 {
   font-family: "Poppins";
   font-weight: 600;
@@ -301,7 +356,7 @@ form.create h3 {
   padding-right: 20px;
 }
 form.signup label,
-form.my-login-form label,
+form.login label,
 form.create label {
   color: var(--primary); /* Set the color for labels */
 }
@@ -309,11 +364,12 @@ form.create label {
   padding: 10px;
 }
 form.signup input,
-form.my-login-form input,
+form.login input,
 form.create input {
   color: var(--quin); /* Set the color for input text */
   border: 2px solid var(--seiz); /* Set the border color for input */
   padding: 5px; /* Adjust padding as needed */
+  margin-bottom: 10px;
   background-color: var(--secondary);
   font-family: inherit;
   transition: background-color 0.3s ease; 
@@ -322,25 +378,34 @@ form.create input{
   width: 100px;
 }
 form.signup input:hover,
-form.my-login-form input:hover,
+form.login input:hover,
 form.create input:hover {
   color: var(--primary);
   background-color: var(--quat); 
   opacity: 0.8;
 }
 form.signup input.error,
-form.my-login-form input.error,
+form.login input.error,
 form.create input.error {
   border: 2px solid var(--error);
 }
 
-form.signup a,form.my-login-form a{
+form.signup a,form.login a{
   color:var(--primary);
 }
-form.my-login-form a:hover, form.signup a:hover {
+form.login a:hover, form.signup a:hover {
   color: var(--secondary);
   font-weight: bold;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  form.create{
+    padding-right: 2px;
+  }
+  form.create label{
+    padding-right: 25px;
+  }
 }
 
 /* Glassmorphism for future cards */
