@@ -37,7 +37,6 @@ const Workout = () => {
           <WorkoutDetails key={workout._id} workout={workout} />
         ))}
       </div>
-      
     </div>
   )
 }

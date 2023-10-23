@@ -13,6 +13,11 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Homepage from './homepage/Homepage'
 
+// Explore exercises pages
+import SearchHome from './pages2/Home';
+import ExerciseDetail from './pages2/ExerciseDetail';
+
+
 function App() {
   const { user } = useAuthContext()
 
@@ -23,6 +28,9 @@ function App() {
         <Navbar />
         <div className="pages">
           <Routes>
+            <Route path="/SearchHome" element={user ?<SearchHome isSearchHome={true} /> : <Navigate to="/login" />} />
+            <Route path="/exercise/:id" element={<ExerciseDetail />} />
+
             <Route 
               path="/" 
               element={!user ? <Homepage /> : <Navigate to="/login" />} 

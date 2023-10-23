@@ -13,27 +13,6 @@ const Homepage = () => {
   const [showBackgroundChange, setShowBackgroundChange] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
   
-  const cardContainerStyle = {
-    marginTop: '4%',
-  };
-  
-  const infoStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  };
-  
-  const slidingImagesStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-  };
-  
-  const imageStyle = {
-    maxWidth: '100%',
-    height: 'auto',
-    margin: '10px',
-  };
-  
   useEffect(() => {
     const handleScroll = () => {
       const infoSection = document.querySelector('.my-info');
@@ -64,7 +43,7 @@ const Homepage = () => {
   return (
 
     <div className='my-body'>
-  
+      {/* Scroll effect Banner */}
       <section className="my-image-section">
         <div className={`my-image-container ${isZoomed ? 'my-zoomed-in' : 'my-zoomed-out'}`}>
           <img
@@ -79,10 +58,11 @@ const Homepage = () => {
         </div>
       </section>
 
-      <CardHoriz/> {/* Made card types in horizontal */}
+      <CardHoriz/> {/* Made types in cards horizontally */}
 
-      <CardContainer/>
+      <CardContainer/> {/*Why Us? Card Container */}
 
+      {/* Grid of photos morphed into info */}
       <section className="my-cardContainer1" style={{ marginTop: '15%' }}>
         <div className="my-card" style={{ marginBottom: '13%' }}>
         <img src="https://images.unsplash.com/photo-1517130038641-a774d04afb3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80.jpg" alt="Card Image" />
@@ -127,9 +107,9 @@ const Homepage = () => {
       </div>
       </div>
 
-      {/* Workout ad card */}
-      <div className="container mb-5" style={{paddingBottom:"30px"}}>
-        <div className="row justify-content-center align-items-center vh-80">
+      {/* Workout ad join card */}
+      <div className="container mb-5" >
+        <div className="row justify-content-center align-items-center vh-100">
             <div className="col-lg-8">
             <div className="card bg-primary text-white shadow-lg p-5 rounded">
                 <div className="row">
@@ -151,9 +131,10 @@ const Homepage = () => {
           </div>
         </div>
 
+      {/* Banners at the end of page */}
       <WorkoutSlogans />
 
-      <div className={showBackgroundChange ? 'my-change-bg-color' : ''}></div>
+      {/* <div className={showBackgroundChange ? 'my-change-bg-color' : ''}></div> */}
       
     </div>
   );

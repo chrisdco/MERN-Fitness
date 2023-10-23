@@ -16,7 +16,8 @@ const Login = () => {
   }
 
   return (
-    <div class="glass-card">
+    // Form for Login
+    <div className="glass-card">
       <form className="login" onSubmit={handleSubmit}>
         <h3>Login</h3>
         
