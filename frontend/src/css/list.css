@@ -6,11 +6,11 @@
   --title-color: #fff;
   --text-color: hsl(235, 20%, 57%);
   --shape-gradient: linear-gradient(90deg,
-                  hsl(300, 76%, 60%),
-                  hsl(57, 81%, 60%));
+                  hsl(216, 76%, 60%),
+                  hsl(20, 38%, 62%));
   --body-gradient: linear-gradient(180deg,
-              hsl(22, 100%, 84%),
-              hsl(265, 100%, 80%));
+              hsl(21, 13%, 58%),
+              hsl(228, 43%, 43%));
   --container-color: hsl(235, 32%, 10%);
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -28,7 +28,21 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+.toggle-off{
+  background: var(--shape-gradient);
+}
+.toggle-off button{
+  background: linear-gradient(240deg,
+  hsl(229, 54%, 51%),
+  hsl(21, 13%, 58%)
+  );
+  transition: background 1s ease;
+}
+.toggle-off button:hover{
+  background: linear-gradient(90deg,
+  hsl(264, 76%, 60%),
+  hsl(166, 81%, 60%));
+}
 /*=============== CARD ===============*/
 .card_spec {
   display: grid;

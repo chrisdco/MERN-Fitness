@@ -1,6 +1,7 @@
 import React from 'react';
 import {Stack} from '@mui/material';
 import Logo from '../assets/images/Logo(2).png';
+import CardEvervault from './Evervaulthover';
 
 const Footer = () => (
   <footer>
@@ -10,6 +11,7 @@ const Footer = () => (
       <div className="footer-text">
         Made with ❤️ by Moi
       </div>
+      {/* <CardEvervault/> */}
     </Stack>
     
   </div>

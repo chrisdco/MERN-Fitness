@@ -54,10 +54,9 @@ const Navbar = () => {
   useEffect(() => {
     const handleResize = () => {
       // Update the isMinimized state based on the screen size
-      setIsMinimized(window.innerWidth <= 450); // You can adjust this breakpoint
+      setIsMinimized(window.innerWidth <= 450); 
     };
 
-    // Listen for window resize events
     window.addEventListener('resize', handleResize);
 
     // Initial check for minimized screen

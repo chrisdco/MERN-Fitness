@@ -54,12 +54,14 @@ const WorkoutForm = () => {
 
   return (
     <div>
-      <div
-        className={`exercise-list ${showExerciseList ? 'visible' : ''}`}
-        style={{ zIndex: 1 }}
-      >
+      <div>
+      <div className={`exercise-list ${showExerciseList ? 'visible' : ''}`}>
+      {/* <div className='toggle-off'>
+        <button className='toggle-off' onClick={handleButtonClick}>Toggle Off</button>
+      </div> */}
         <ExerciseList />
       </div>
+    </div>
       <form className="create" onSubmit={handleSubmit}>
         <h3 style={{fontSize:"23px"}}>Add a New Workout</h3>
         <label>Name:</label>
@@ -97,8 +99,21 @@ const WorkoutForm = () => {
         {error && <div className="error">{error}</div>}
         
       </form>
-      <div>
+      <a id="yt-link" className="meta-link" target="_blank">
         <button 
+          onClick={handleButtonClick} 
+          style={{ zIndex: 0, backgroundColor: 'transparent',
+          border: 'none',
+          outline: 'none' }}
+        >
+          <span class="material-symbols-outlined" style={{fontSize:"24px", color:"#6da5c0"}}>
+            menu_open
+          </span>
+        </button>
+      </a>
+      {/* <div>
+        <button 
+          className='toggle-off'
           onClick={handleButtonClick} 
           style={{ zIndex: 0 }}
         >
@@ -106,7 +121,7 @@ const WorkoutForm = () => {
             menu_open
           </span>
         </button>
-      </div>
+      </div> */}
     </div>
   )
 }
