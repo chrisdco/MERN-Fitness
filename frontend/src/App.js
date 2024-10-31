@@ -1,12 +1,22 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 
+import './index.css';
+import './css/hoverclassy.css'
+import './css/myFooterStyles.css';
+
 // pages & components
-import Home from './pages/Home'
+import Workout from './pages/Workout'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Homepage from './homepage/Homepage'
+
+// Explore exercises pages
+import SearchHome from './pages2/Home';
+import ExerciseDetail from './pages2/ExerciseDetail';
+
 
 function App() {
   const { user } = useAuthContext()
@@ -14,26 +24,36 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        
         <Navbar />
         <div className="pages">
           <Routes>
+            <Route path="/SearchHome" element={user ?<SearchHome isSearchHome={true} /> : <Navigate to="/login" />} />
+            <Route path="/exercise/:id" element={<ExerciseDetail />} />
+
             <Route 
               path="/" 
-              element={user ? <Home /> : <Navigate to="/login" />} 
+              element={!user ? <Homepage /> : <Navigate to="/login" />} 
+            />
+            <Route 
+              path="/workout" 
+              element={user ? <Workout /> : <Navigate to="/login" />} 
             />
             <Route 
               path="/login" 
-              element={!user ? <Login /> : <Navigate to="/" />} 
+              element={!user ? <Login /> : <Navigate to="/workout" />} 
             />
             <Route 
               path="/signup" 
-              element={!user ? <Signup /> : <Navigate to="/" />} 
+              element={!user ? <Signup /> : <Navigate to="/workout" />} 
             />
           </Routes>
-        </div>
+          </div>
         <Footer/>
+        
+        
       </BrowserRouter>
-    </div>
+      </div>
   );
 }
 

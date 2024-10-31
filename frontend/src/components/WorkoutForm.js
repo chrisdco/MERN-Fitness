@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 import { useAuthContext } from '../hooks/useAuthContext'
+import ExerciseList from "./ExerciseList";
 
 const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext()
@@ -11,6 +12,11 @@ const WorkoutForm = () => {
   const [reps, setReps] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
+  const [showExerciseList, setShowExerciseList] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowExerciseList(!showExerciseList);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -47,40 +53,76 @@ const WorkoutForm = () => {
   }
 
   return (
-    <form className="create" onSubmit={handleSubmit}>
-      <h3>Add a New Workout</h3>
-      <label>Name:</label>
-      <div className="input-workout">
-        <input 
-          type="text"
-          onChange={(e) => setTitle(e.target.value)}
-          value={title}
-          className={emptyFields.includes('title') ? 'error' : ''}
-        />
+    <div>
+      <div>
+      <div className={`exercise-list ${showExerciseList ? 'visible' : ''}`}>
+      {/* <div className='toggle-off'>
+        <button className='toggle-off' onClick={handleButtonClick}>Toggle Off</button>
+      </div> */}
+        <ExerciseList />
       </div>
+    </div>
+      <form className="create" onSubmit={handleSubmit}>
+        <h3 style={{fontSize:"23px"}}>Add a New Workout</h3>
+        <label>Name:</label>
+        <div className="input-workout">
+          <input 
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+            className={emptyFields.includes('title') ? 'error' : ''}
+          />
+        </div>
 
-      <label>Load (in kg):</label>
-      <div className="input-workout">
-        <input 
-          type="number"
-          onChange={(e) => setLoad(e.target.value)}
-          value={load}
-          className={emptyFields.includes('load') ? 'error' : ''}
-        />
-      </div>
+        <label>Load (in kg):</label>
+        <div className="input-workout">
+          <input 
+            type="number"
+            onChange={(e) => setLoad(e.target.value)}
+            value={load}
+            className={emptyFields.includes('load') ? 'error' : ''}
+          />
+        </div>
 
-      <label>Reps:</label>
-      <div className="input-workout">
-        <input 
-          type="number"
-          onChange={(e) => setReps(e.target.value)}
-          value={reps}
-          className={emptyFields.includes('reps') ? 'error' : ''}
-        />
-      </div>
-      <button><span class="material-symbols-outlined">add</span></button>
-      {error && <div className="error">{error}</div>}
-    </form>
+        <label>Reps:</label>
+        <div className="input-workout">
+          <input 
+            type="number"
+            onChange={(e) => setReps(e.target.value)}
+            value={reps}
+            className={emptyFields.includes('reps') ? 'error' : ''}
+          />
+        </div >
+        <div className="my-addbtn">
+          <button ><span className="material-symbols-outlined">add</span></button>
+        </div>
+        {error && <div className="error">{error}</div>}
+        
+      </form>
+      <a id="yt-link" className="meta-link" target="_blank">
+        <button 
+          onClick={handleButtonClick} 
+          style={{ zIndex: 0, backgroundColor: 'transparent',
+          border: 'none',
+          outline: 'none' }}
+        >
+          <span class="material-symbols-outlined" style={{fontSize:"24px", color:"#6da5c0"}}>
+            menu_open
+          </span>
+        </button>
+      </a>
+      {/* <div>
+        <button 
+          className='toggle-off'
+          onClick={handleButtonClick} 
+          style={{ zIndex: 0 }}
+        >
+          <span class="material-symbols-outlined" color="blue">
+            menu_open
+          </span>
+        </button>
+      </div> */}
+    </div>
   )
 }
 
